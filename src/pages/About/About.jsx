@@ -1,4 +1,5 @@
 import vct from "../../assets/img/home-banner-three.webp";
+import Testimonials from "../../component/CommonComponent/Testimonials/Testimonials";
 const About = () => {
   return (
     <div>
@@ -25,6 +26,8 @@ const About = () => {
             <img src={vct} alt="" />
           </div>
         </div>
+
+        <Testimonials />
       </div>
     </div>
   );

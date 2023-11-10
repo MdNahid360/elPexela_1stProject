@@ -82,7 +82,7 @@ const Navbar = () => {
       <div
         className={`${
           open ? "h-[100vh]" : " h-0"
-        } bg-[#00000081] fixed overflow-hidden duration-300 w-full z-[100]`}
+        } bg-[#00000081] fixed overflow-hidden duration-300 w-full z-[1000]`}
       >
         <div className={`bg-white text-black p-4`}>
           <ul>
@@ -113,7 +113,7 @@ const Navbar = () => {
             <li className="relative">
               <Link
                 className=" pr-3 font-semibold py-2 rounded flex items-center gap-2"
-                to="/blog"
+                to="/all_blogs"
               >
                 Blog
               </Link>

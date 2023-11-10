@@ -61,7 +61,7 @@ const HeroSlider = () => {
         {sliderData?.map((itm) => (
           <SwiperSlide key={itm.id}>
             <img
-              className="w-full md:h-[500px] h-[300px]"
+              className="w-full lg:h-[500px] md:h-[400px] h-[200px]"
               src={itm?.img}
               alt={`Slide ${itm.id}`}
             />

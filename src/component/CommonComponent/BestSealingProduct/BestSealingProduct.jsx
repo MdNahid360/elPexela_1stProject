@@ -32,12 +32,13 @@ const BestSealingProduct = () => {
   };
 
   return (
-    <div className="py-12 relative">
+    <div className="pt-12 relative">
       <div className="flex flex-col items-center absolute top-[14%] justify-center w-full">
-        <Title title="Best Sealing Products" />
-        <p className="md:w-[400px] text-center mt-4 text-gray-600">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, cum
-          commodi molestias reiciendis quia ducimus quasi
+        <Title title="Best Sale Products" />
+        <p className="text-center text-gray-600 pb-12 md:w-[400px] w-full mt-3 m-auto">
+          Discover our top deals on high-quality items with our Best Sale
+          Products. Unbeatable prices, limited-time offers, and a vast range of
+          products to enhance your life.
         </p>
       </div>
       <Swiper

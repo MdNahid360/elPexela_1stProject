@@ -78,15 +78,15 @@ const CategoryProduct = () => {
   return (
     <div>
       <div className="lg:max-w-screen-xl lg:w-auto w-[90%] m-auto pt-8 pb-12">
-        <img
+        {/* <img
           className="w-full rounded lg:h-[400px] md:h-[250px] h-[140px]"
           src={baner}
           alt=""
         />
         <br />
-        <br />
+        <br /> */}
         <div className="flex items-center justify-between">
-          <Title title="Shop" />
+          <Title title="Category" />
           <div className="button-group flex items-center md:w-[300px] px-2 bg-white">
             <input
               type="text"

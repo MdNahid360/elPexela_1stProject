@@ -19,8 +19,15 @@ const ExploreProduct = () => {
         <div className="bg-[#F2F2F2] text-[#c12954] px-2 text-3xl relative z-10">
           New Launch
         </div>
-        <div className="bg-gray-800 absolute w-full h-[1px]">.</div>
+
+        <br />
+        <div className="bg-gray-800 absolute w-full h-[1px]"></div>
       </div>
+      <p className="text-center text-gray-600 pb-4 md:w-[500px] w-full mt-3 m-auto">
+        Introducing our latest arrivals: New Launch products! Explore the newest
+        additions to our collection, featuring cutting-edge designs, innovative
+        features, and modern solutions to enhance your lifestyle
+      </p>
       <div className="grid mt-12 md:grid-cols-3 grid-cols-1 gap-6">
         {products?.slice(0, 8)?.map((itm) => (
           <ProductCart key={itm?.id} itm={itm} />

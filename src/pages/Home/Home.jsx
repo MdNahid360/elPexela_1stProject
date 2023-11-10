@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="">
       <HeroSlider />
-      <div className="lg:max-w-screen-xl lg:w-auto w-[90%] m-auto py-12">
+      <div className="lg:max-w-screen-xl lg:w-auto w-[90%] m-auto py-0">
         <Category />
         <BestSealingProduct />
         <SpeacialProduct />

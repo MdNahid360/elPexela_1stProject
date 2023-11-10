@@ -42,9 +42,11 @@ const Testimonials = () => {
 
   return (
     <div className="pt-12">
-      <div className=" flex justify-center pb-8">
+      <div className=" flex justify-center ">
         <Title title="Testimonials" />
       </div>
+      <br />
+      <br />
       <div className="text-black ts-box">
         <div className="ltr md:w-[500px] w-[100px]"></div>
         <div className="rtr  md:w-[500px] w-[100px]"></div>
