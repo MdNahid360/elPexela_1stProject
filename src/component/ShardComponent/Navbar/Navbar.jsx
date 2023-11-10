@@ -8,6 +8,7 @@ import logo from "../../../../src/assets/img/logo/navlog.png";
 import Blog from "./../../../pages/Blog/Blog";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [on, setOn] = useState(false);
   const { addProductBar, setAddProductBar } = useContext(AuthContext);
   return (
     <div>
@@ -23,9 +24,17 @@ const Navbar = () => {
               <li className="  duration-200">
                 <Link
                   to="/"
-                  className="btn  dropdown relative text-black text-lg px-4 py-0"
+                  className="btn relative text-black text-lg px-4 py-0"
                 >
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/shop"
+                  className="btn dropdown relative text-black text-lg px-4 py-2"
+                >
+                  Shop
                   <div
                     className={` mt-6 w-[200px] dropdown-menu  h-[0px] m-auto duration-200 absolute left-0 bg-[transparent]  overflow-hidden z-[200]`}
                   >
@@ -46,11 +55,6 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                </Link>
-              </li>
-              <li>
-                <Link to="/shop" className="btn text-black text-lg px-4 py-2">
-                  Shop
                 </Link>
               </li>
               <li>
@@ -88,6 +92,7 @@ const Navbar = () => {
           <ul>
             <li className="relative">
               <Link
+                onClick={() => setOpen(!open)}
                 className=" pr-3 font-semibold py-2 rounded flex items-center gap-2"
                 to="/"
               >
@@ -96,14 +101,34 @@ const Navbar = () => {
             </li>
             <li className="relative">
               <Link
+                onClick={() => setOn(!on)}
                 className=" pr-3 font-semibold py-2 rounded flex items-center gap-2"
                 to="/shop"
               >
                 Shop
               </Link>
+              <div
+                className={`${
+                  on ? "h-[90px]" : "h-[0px]"
+                } bg-gray-200  overflow-hidden duration-200`}
+              >
+                <ul className="m-2">
+                  <li className="py-2 px-2 text-black border-b border-black">
+                    <Link onClick={() => setOpen(!open)} to={`/category/4`}>
+                      Flip Flop
+                    </Link>
+                  </li>
+                  <li className="py-2 px-2 text-black">
+                    <Link onClick={() => setOpen(!open)} to={`/category/4`}>
+                      Sneakers
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className="relative">
               <Link
+                onClick={() => setOpen(!open)}
                 className=" pr-3 font-semibold py-2 rounded flex items-center gap-2"
                 to="/about"
               >
@@ -112,6 +137,7 @@ const Navbar = () => {
             </li>
             <li className="relative">
               <Link
+                onClick={() => setOpen(!open)}
                 className=" pr-3 font-semibold py-2 rounded flex items-center gap-2"
                 to="/all_blogs"
               >
