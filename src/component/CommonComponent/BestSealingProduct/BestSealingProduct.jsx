@@ -67,7 +67,7 @@ const BestSealingProduct = () => {
           <SwiperSlide className="mt-[70px]" key={itm?._id}>
             <Link to={`/products/${itm?._id}`}>
               <div className="bg-white p-3 mt-4 duration-200 hover:shadow-xl shadow-gray-200 h-menu">
-                <div className="h-[330px] duration-300  overflow-hidden relative">
+                <div className="lg:h-[330px] md:h-[200px] h-[330px] duration-300  overflow-hidden relative">
                   <img
                     src={itm?.colors[0]?.images[0]}
                     alt=""
