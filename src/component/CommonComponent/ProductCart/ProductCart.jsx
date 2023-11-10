@@ -1,12 +1,10 @@
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import img1 from "../../../assets/img/unnamed.jpg";
-import img2 from "../../../assets/img/download.jpg";
 const ProductCart = ({ itm }) => {
   return (
-    <div className="hover-menu duration-200 overflow-hidden bg-white p-2">
-      <Link to={`/products/${itm?._id}`}>
-        <div className="h-[210px] rela w-full relative overflow-hidden duration-200 hover-box">
+    <div className="bg-white p-4 text-black rounded-lg shadow-md">
+      <Link className="hover-menu" to={`/products/${itm?._id}`}>
+        <div className="lg:h-[340px] md:h-[200px] border p-2 rela w-full relative overflow-hidden duration-200 hover-box">
           {" "}
           <img
             src={itm?.colors[0]?.images[0]}
@@ -15,20 +13,11 @@ const ProductCart = ({ itm }) => {
           />
         </div>
       </Link>
-      <div className="info mt-3">
-        <div className="flex items-center justify-between">
-          <h4 className="text-black text-xl font-semibold">{itm?.name}</h4>
-        </div>
-        <div className="flex items-center mt-2 gap-8">
-          <h5 className="text-md font-semibold text-[#ff0055] ">
-            ${itm?.price}
-          </h5>
-          <del className="text-md font-semibold text-[#808080] ">
-            $ {itm?.price + 16}
-          </del>
-        </div>
-
-        <div className="flex items-center gap-2  pt-3 hover-overlay duration-200 ">
+      <br />
+      <div className="flex flex-col justify-center">
+        <h2 className="text-xl text-center font-bold mb-2">{itm?.name}</h2>
+        <h2 className="text-xl text-center ">${itm?.price}</h2>
+        <div className="flex pb-6 justify-center items-center lg:gap-6 md:gap-2 gap-6  pt-3 hover-overlay duration-200 ">
           <Link to={itm?.amazonlink}>
             <div className="mt-2 p-1 w-[50px] bg-[#ff18691c] border border-[red] rounded-md h-[50px]">
               <img
@@ -40,12 +29,20 @@ const ProductCart = ({ itm }) => {
           </Link>{" "}
           <Link to={itm?.myntralink}>
             <div className="mt-2 p-1 w-[50px] bg-[#ff18691c] border border-[red] rounded-md h-[50px]">
-              <img className=" rounded-md w-full h-full" src={img2} alt="" />
+              <img
+                className=" rounded-md w-full h-full"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRefbNOJJO4j99t2kbsiHGeHnHlhxy8OFZSogdVFdk&s"
+                alt=""
+              />
             </div>
           </Link>{" "}
           <Link to={itm?.flipkartlink}>
             <div className="mt-2 p-1 w-[50px] bg-[#ff18691c] border border-[red] rounded-md h-[50px]">
-              <img className=" rounded-md w-full h-full" src={img1} alt="" />
+              <img
+                className=" rounded-md w-full h-full"
+                src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/072edbeff198a0a29049bcc1ee344d02"
+                alt=""
+              />
             </div>
           </Link>
         </div>

@@ -19,6 +19,60 @@ const Shop = () => {
     itm.Title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  // const toggleAccordion = () => {
+  //   setIsOpen(!isOpen);
+  // };
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    if (activeIndex === index) {
+      // Clicking an active accordion item closes it
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(index);
+    }
+  };
+
+  const accordionItems = [
+    {
+      title: "Category",
+      content: [
+        {
+          id: 0,
+          name: "Flip Flop",
+        },
+        {
+          id: 1,
+          name: "Shop Shoes",
+        },
+        {
+          id: 2,
+          name: "Sneakers",
+        },
+      ],
+    },
+    {
+      title: "Size",
+      content: [
+        {
+          id: 0,
+          name: "md",
+        },
+        {
+          id: 1,
+          name: "lg",
+        },
+        {
+          id: 2,
+          name: "xl",
+        },
+      ],
+    },
+  ];
+
   return (
     <div>
       <div className="lg:max-w-screen-xl lg:w-auto w-[90%] m-auto py-12">
@@ -37,72 +91,57 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-5">
+        <div className="grid md:grid-cols-5 gap-4">
           <div className="mt-3">
             <h4 className="font-semibold text-lg text-black">Filter</h4>
             {/* filter item */}
-            <div className="mt-4">
-              <h4 className=" text-md text-gray-600">Size</h4>
-              <div className="flex items-center mt-3 cursor-pointer">
-                <input
-                  id="checked-checkbox"
-                  type="checkbox"
-                  value=""
-                  className="w-6 h-6 border border-black text-blue-600 bg-gray-100  rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="checked-checkbox"
-                  className="ml-2  cursor-pointer text-md font-medium text-gray-900 dark:text-gray-300"
+
+            <div className="mt-3 text-black">
+              {/* ... */}
+              {accordionItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="border bg-white border-gray-300 rounded mb-2"
                 >
-                  S
-                </label>
-              </div>
-              <div className="flex items-center mt-3 cursor-pointer">
-                <input
-                  id="checked-checkbox2"
-                  type="checkbox"
-                  value=""
-                  className="w-6 h-6 border border-black text-blue-600 bg-gray-100  rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="checked-checkbox2"
-                  className="ml-2  cursor-pointer text-md font-medium text-gray-900 dark:text-gray-300"
-                >
-                  M
-                </label>
-              </div>
-              <div className="flex items-center mt-3 cursor-pointer">
-                <input
-                  id="checked-checkbox3"
-                  type="checkbox"
-                  value=""
-                  className="w-6 h-6 border border-black text-blue-600 bg-gray-100  rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="checked-checkbox3"
-                  className="ml-2  cursor-pointer text-md font-medium text-gray-900 dark:text-gray-300"
-                >
-                  L
-                </label>
-              </div>{" "}
-              <div className="flex items-center mt-3 cursor-pointer">
-                <input
-                  id="checked-checkbox4"
-                  type="checkbox"
-                  value=""
-                  className="w-6 h-6 border border-black text-blue-600 bg-gray-100  rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="checked-checkbox4"
-                  className="ml-2  cursor-pointer text-md font-medium text-gray-900 dark:text-gray-300"
-                >
-                  XL
-                </label>
-              </div>
+                  <button
+                    className="w-full  text-left px-4 py-4 focus:outline-none "
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    <div className="flex justify-between text-xl items-center">
+                      <span>{item.title}</span>
+                      <span>{activeIndex === index ? "-" : "+"}</span>
+                    </div>
+                  </button>
+                  {activeIndex === index && (
+                    <div className="px-4 pb-4">
+                      {item.content.map((contentItem, contentIndex) => (
+                        <div
+                          key={contentIndex}
+                          className="flex items-center mt-3 cursor-pointer"
+                        >
+                          <input
+                            id={`checked-checkbox-${contentIndex}`}
+                            type="checkbox"
+                            value=""
+                            className="w-6 h-6 border border-black text-blue-600 bg-gray-100  rounded focus:ring-blue-500 "
+                          />
+                          <label
+                            htmlFor={`checked-checkbox-${contentIndex}`}
+                            className="ml-2 cursor-pointer text-md font-medium w-full text-gray-900 "
+                          >
+                            {contentItem.name}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              {/* ... */}
             </div>
           </div>
           <div className="md:col-span-4">
-            <div className="grid mt-12 md:grid-cols-4 grid-cols-1 gap-4">
+            <div className="grid mt-12 md:grid-cols-3 grid-cols-1 gap-4">
               {filteredProducts.map((itm) => (
                 <ProductCart key={itm?._id} itm={itm} />
               ))}

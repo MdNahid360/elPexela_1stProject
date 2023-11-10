@@ -18,7 +18,7 @@ const Category = () => {
       </div>
 
       <div className="mt-6 grid md:grid-cols-3 gap-4">
-        <Link to={`/category/3`}>
+        <Link to={`/category/654b4cbc18d46365d959c3aa`}>
           <div className="bg-white p-4">
             <div className="">
               <img
@@ -30,7 +30,7 @@ const Category = () => {
             <h3 className="text-lg text-center font-semibold mt-2">Sneakers</h3>
           </div>
         </Link>
-        <Link to={`/category/3`}>
+        <Link to={`/category/654b4cbc18d46365d959c3aa`}>
           <div className=" bg-white p-4">
             <div className="">
               <img

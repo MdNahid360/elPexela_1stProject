@@ -49,7 +49,7 @@ const Testimonials = () => {
         <div className="ltr md:w-[500px] w-[100px]"></div>
         <div className="rtr  md:w-[500px] w-[100px]"></div>
         <Slider {...settings}>
-          <div className="">
+          <div className="prd">
             <div className="bg-white px-4 py-14">
               <img
                 src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"

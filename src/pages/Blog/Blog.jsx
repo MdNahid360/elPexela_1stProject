@@ -29,14 +29,25 @@ const Blog = () => {
   return (
     <div className="lg:max-w-screen-xl mt-12 text-black lg:w-auto w-[90%] m-auto py-12">
       <h1 className="text-3xl font-bold mb-6 text-center">Latest Blog Posts</h1>
-      <div className="grid md:grid-cols-3 grid-cols-1 mt-14 gap-6">
+      <div className="grid md:grid-cols-3 grid-cols-1 mt-14 lg:gap-6 md:gap-2 gap-6">
         {blogPosts.map((post) => (
-          <div key={post.id} className="bg-white p-6 rounded-lg shadow-md">
-            <img src={post.img} className="w-full rounded h-[260px]" alt="" />{" "}
+          <div
+            key={post.id}
+            className="bg-white lg:p-6 md:p-4 p-6 rounded-lg shadow-md"
+          >
+            <img
+              src={post.img}
+              className="w-full rounded lg:h-[260px] md:h-[200px] h-[260px]"
+              alt=""
+            />{" "}
             <br />
-            <h2 className="text-xl font-bold mb-2">{post.title}</h2>
-            <p className="text-gray-600">{post.content}</p>
-            <Link to="">
+            <h2 className="lg:text-xl tmd:text-md text-xl font-bold mb-2">
+              {post.title}
+            </h2>
+            <p className="text-gray-600 lg:text-md md:text-md text-lg">
+              {post.content}
+            </p>
+            <Link to="/blog/3">
               <button className="bg-[#ff004c] px-4 py-2 mt-6 text-white rounded">
                 Read More
               </button>

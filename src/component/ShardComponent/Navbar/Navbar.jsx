@@ -54,7 +54,10 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="btn text-black text-lg px-4 py-2">
+                <Link
+                  to="/all_blogs"
+                  className="btn text-black text-lg px-4 py-2"
+                >
                   Blog
                 </Link>
               </li>

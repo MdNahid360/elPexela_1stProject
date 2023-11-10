@@ -39,7 +39,7 @@ const SpeacialProduct = () => {
     <div className="relative mt-12 h-bar duration-200">
       <div className="bg-[#00000069] h-div duration-200 opacity-0 flex md:p-12 p-2 items-center absolute h-full w-full">
         {" "}
-        <Link to={`category/3`}>
+        <Link to={`category/654b4cbc18d46365d959c3aa`}>
           <button className="bg-[#ffffff] md:px-8  px-4  md:py-2 py-1 text-black font-semibold">
             Shop Now
           </button>
