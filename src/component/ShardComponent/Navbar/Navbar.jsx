@@ -32,11 +32,11 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/shop"
-                  className="btn dropdown relative text-black text-lg px-4 py-2"
+                  className="btn dropdown  h-full relative text-black text-lg px-4 py-2"
                 >
                   Shop
                   <div
-                    className={` mt-6 w-[200px] dropdown-menu  h-[0px] m-auto duration-200 absolute left-0 bg-[transparent]  overflow-hidden z-[200]`}
+                    className={` mt-2 w-[200px] dropdown-menu  h-[0px] m-auto duration-200 absolute left-0 bg-[transparent]  overflow-hidden z-[200]`}
                   >
                     <ul className="">
                       <li className="">
